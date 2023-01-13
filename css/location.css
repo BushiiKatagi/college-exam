@@ -1,0 +1,113 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Grid */
+.grid-container {
+    display: grid;
+    grid-template-areas:
+      'header'
+      'nav'
+      'slider'
+      'main'       
+      'footer';   
+    grid-gap: 10px;
+    grid-template-rows: auto auto auto auto auto;
+  }
+
+#header {
+    grid-area: header;
+    background-color: #0466c8;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Slideshow */
+#slideshow {
+    grid-area: slider;
+    background-color: firebrick;
+    color: white;
+    text-align: center;
+}
+
+.slide img {
+    width: 100%;
+    max-height: 700px;
+    display: block;
+}
+
+/* Navigation */
+#navigation {
+    grid-area: nav;
+    background-color: #001233;
+    text-align: right;
+    font-size: 20px;
+}
+
+#navigation li {
+    display: inline;
+}
+
+#navigation a {
+    text-decoration: none;
+    padding: 20px;
+    color: white;
+  }
+
+#navigation li a:hover {
+    background-color: #979dac;
+    color: black;
+  }
+
+/* Footer */
+#footer {
+    grid-area: footer;
+    background-color: #979dac;
+    text-align: center;
+    padding: 10px;
+}
+
+@media (max-width: 600px) {
+  .grid-container  {
+    grid-template-areas:
+      'header'
+      'nav'
+      'main'    
+      'footer'; 
+  }
+
+  /* Navigation */
+  #navigation ul {
+    padding: 0;
+  }
+  
+  #navigation li {
+    padding: 10px;
+    display: block;
+  }
+
+  #navigation a {
+    padding: 0;
+    text-decoration: none;
+  }
+}
+
+/* Map */
+#main-section {
+    position: relative;
+    padding-bottom: 50%;
+  }
+
+/* Omogućava da Google mapa bude potpuno responsive */
+#main-section iframe {
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+  }

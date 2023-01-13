@@ -1,0 +1,163 @@
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Grid container - Glavni div (sekcija) */
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+      'header     header    header'
+      'nav        nav       nav'
+      'slider     slider    slider'
+      'left       left      right'
+      'footer     footer    footer';
+
+    grid-gap: 10px;
+
+    grid-template-rows: auto auto auto auto auto;
+  }
+
+/* Header */
+#header {
+    grid-area: header;
+    background-color: #0466c8;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Slideshow */
+#slideshow {
+    grid-area: slider;
+    background-color: firebrick;
+    color: white;
+    text-align: center;
+}
+
+.slide img {
+    width: 100%;
+    max-height: 700px;
+    display: block;
+}
+
+/* Navigation */
+#navigation {
+    grid-area: nav;
+    background-color: #001233;
+    text-align: right;
+    font-size: 20px;
+}
+
+#navigation li {
+    display: inline;
+}
+
+#navigation a {
+    text-decoration: none;
+    padding: 20px;
+    color: white;
+  }
+
+#navigation li a:hover {
+    background-color: #979dac;
+    color: black;
+  }
+
+/* Left */
+#left-section {
+    grid-area: left;
+    background-color: #023e7d;
+    padding: 10px;
+
+    color: white;
+    text-align: center;
+}
+
+/* Grid Kartice */
+.card {
+    padding: 20px;
+    height: auto;
+  }
+  
+  .cards {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 16px;
+  }
+
+  /* Responsive Layout - Kartice */
+
+@media (min-width: 900px) {
+    .cards { grid-template-columns: repeat(1, 1fr); }
+}
+
+@media (min-width: 1200px) {
+    .cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Right */
+#right-section {
+    grid-area: right;
+    background-color:  #33415c;
+
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+#right-section a {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #5AB9EA;
+    text-transform: uppercase;
+}
+
+/* Footer */
+#footer {
+    grid-area: footer;
+    background-color: #979dac;
+    text-align: center;
+    padding: 10px;
+}
+#footer a{
+    color: black;
+    padding: 0;
+    text-decoration: none;
+}
+
+/* Responsive Design */
+/* @media (max-width: 600px) { } označava blok koda koji će se izvršiti ukoliko je rezolucija ekrana manja od 600px. To znači da ukoliko promenimo neki deo koda koji smo već napisali stari deo koda će važiti samo ukoliko je rezolucija ekrana veća od 600px dok ako je manja važi ovaj novi deo koda a stari ne (naravno samo deo koda koji je drugačiji) */
+@media (max-width: 600px) {
+  .grid-container  {
+    grid-template-areas: 
+      'header'
+      'nav'
+      'slider'
+      'left'
+      'right'       
+      'footer'; 
+  }
+
+
+  /* Navigation */
+  #navigation ul {
+    padding: 0;
+  }
+  
+  #navigation li {
+    padding: 10px;
+    display: block;
+  }
+
+  #navigation a {
+    padding: 0;
+    text-decoration: none;
+  }
+}
